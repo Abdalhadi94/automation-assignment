@@ -12,7 +12,7 @@ const CheckoutPage = {
   ccExpInput: 'input[autocomplete="cc-exp"]',
   ccvInput: 'input[autocomplete="cc-csc"]',
   payButton: '.mysr-form-button',
-  visaOption: 'input[type="checkbox"][value="true"]',
+  visaOption: 'img[src*="visa.svg"]',
  // moysarSubmitButton: 'input[type="submit"][value="Submit"]'
 };
 

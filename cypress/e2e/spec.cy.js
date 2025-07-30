@@ -20,8 +20,7 @@ describe('Payment Methods', () => {
 
     cy.wait(1000); // Wait for the payment methods to load
 
-    cy.get(CheckoutPage.paymentMethodTitle)
-    .contains('Payment Method').click({ force: true });
+    cy.contains('button', 'Payment Method').click();
 
 
     cy.get(CheckoutPage.paymentMethodWallet)
@@ -54,7 +53,9 @@ describe('Payment Methods', () => {
     cy.contains(CheckoutPage.checkoutButton, 'Checkout').click({ force: true });
 
     // Select the "Visa" payment method
-    cy.get(CheckoutPage.visaOption).eq(0).click({ force: true });
+   // cy.get(CheckoutPage.visaOption).eq(0).click({ force: true });
+  cy.get(CheckoutPage.visaOption).click({ force: true });
+
     cy.get(CheckoutPage.ccNameInput).type('Abdelhadi AlQudah', { force: true });
     cy.get(CheckoutPage.ccNumberInput).type('4242424242424242', { force: true });
     cy.get(CheckoutPage.ccExpInput).type('12/30', { force: true });
