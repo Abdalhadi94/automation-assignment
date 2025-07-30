@@ -7,3 +7,5 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false; // Prevent Cypress from failing the test
   }
 });
+
+

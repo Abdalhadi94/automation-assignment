@@ -22,21 +22,14 @@ describe('Payment Methods', () => {
 
     cy.contains('button', 'Payment Method').click();
 
+    cy.contains('p', 'Current Wallet Balance').should('be.visible');
+        // Verify the payment methods are displayed "Visa"
+    cy.contains('p', 'Checkout').should('be.visible');
+        // Verify the payment methods are displayed "Tamara"
+    cy.contains('label', 'Checkout on Tamara').should('be.visible');
+        // Verify the payment methods are displayed "Tabby"
+    cy.contains('p', 'Pay in 4. No interest, no fees.').should('be.visible');
 
-    cy.get(CheckoutPage.paymentMethodWallet)
-      .should('be.visible')
-
-    // Verify the payment methods are displayed "Visa"
-    cy.get(CheckoutPage.visaPaymentMethod)
-      .should('be.visible')
-    
-    // Verify the payment methods are displayed "Tamara"
-    cy.get(CheckoutPage.tamaraPaymentMethod)
-      .should('be.visible')
-
-    // Verify the payment methods are displayed "Tabby"
-    cy.get(CheckoutPage.tabbyPaymentMethod)
-      .should('be.visible')
 
   });
 
@@ -53,8 +46,7 @@ describe('Payment Methods', () => {
     cy.contains(CheckoutPage.checkoutButton, 'Checkout').click({ force: true });
 
     // Select the "Visa" payment method
-   // cy.get(CheckoutPage.visaOption).eq(0).click({ force: true });
-  cy.get(CheckoutPage.visaOption).click({ force: true });
+    cy.get(CheckoutPage.visaOption).click({ force: true });
 
     cy.get(CheckoutPage.ccNameInput).type('Abdelhadi AlQudah', { force: true });
     cy.get(CheckoutPage.ccNumberInput).type('4242424242424242', { force: true });
